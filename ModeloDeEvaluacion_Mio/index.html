@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - PedidosYaApp</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body class="fondo">
+  <div class="contenedor-app">
+    <div class="contenido-app">
+      <!-- Encabezado con barra roja -->
+      <header class="header">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <div class="logo-container">
+          <img src="img/logoIndex.jpg" alt="Logo" class="logo" />
+        </div>
+
+        <div class="header-icons">
+          <button class="cart-btn" onclick="location.href='carrito.html'">🛒</button>
+
+          <div class="search-container">
+            <button class="search-icon" onclick="mostrarBusqueda()">🔍</button>
+            <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="filtrarProductos()" />
+          </div>
+        </div>
+      </header>
+
+      <nav id="menu" class="menu">
+        <ul>
+          <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section class="usuario">
+          <img src="img/perfilUser.jpg" alt="Usuario" class="usuario-img" />
+          <h2>¡Hola, Usuario!</h2>
+        </section>
+
+        <section class="productos">
+          <div class="producto">
+            <img src="img/articulo1.jpg" alt="Hamburguesa" />
+            <div class="producto-info">
+              <h2>Hamburguesa</h2>
+              <p>Deliciosa con queso y papas.</p>
+              <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="img/articulo2.jpg" alt="Pizza" />
+            <div class="producto-info">
+              <h2>Pizza</h2>
+              <p>Mozzarella clásica y tomate.</p>
+              <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+          </div>
+
+          <div class="producto">
+            <img src="img/articulo3.jpg" alt="Hotdog" />
+            <div class="producto-info">
+              <h2>Pancho</h2>
+              <p>Con pan suave y salsas.</p>
+              <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("mostrar");
+    }
+
+    function mostrarBusqueda() {
+      const input = document.getElementById("searchInput");
+      input.style.display = input.style.display === "inline-block" ? "none" : "inline-block";
+      if (input.style.display === "inline-block") {
+        input.focus();
+      } else {
+        input.value = "";
+        filtrarProductos();
+      }
+    }
+
+    function filtrarProductos() {
+      const filtro = document.getElementById("searchInput").value.toLowerCase();
+      const productos = document.querySelectorAll(".producto");
+
+      productos.forEach((producto) => {
+        const nombre = producto.querySelector("h2").textContent.toLowerCase();
+        producto.style.display = nombre.includes(filtro) ? "flex" : "none";
+      });
+    }
+  </script>
+</body>
+</html>

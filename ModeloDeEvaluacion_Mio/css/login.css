@@ -1,0 +1,86 @@
+/* Fondo general fijo */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #fdf4f0; /* cremita suave */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Contenedor que simula la app */
+  .contenedor-app {
+    background-color: white;
+    width: 420px; /* 🔸 Ajuste de ancho */
+    height: 640px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Caja del formulario */
+  .login-box {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 250px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+  
+  /* Campos de entrada */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: border 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #e53935;
+    outline: none;
+  }
+  
+  /* Botón de login */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #c62828;
+  }
+  
+  /* Texto inferior */
+  .signup {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .signup a {
+    color: #e53935;
+    text-decoration: none;
+    font-weight: bold;
+  }  
